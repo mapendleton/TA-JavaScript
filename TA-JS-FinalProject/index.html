@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Basic HTML Template</title>
+        <link rel="stylesheet" href="./css/pizza_style.css">
+    </head>
+
+    <body>
+    <!--PAGE CONTENT-->
+
+        <header>
+            <h1>Your Pizza Company!</h1>
+        </header>
+
+        <!--Pizza order--> <!--Used div instead of H3 because of padding, couldn't get h3 to top of div-->
+        <main>
+            <div class="radio">
+                <div class="pizza_part radio_selection">
+                    <div class="in-radio">
+                        <div class="section-title">Size</div>
+                        <form action="">
+                            <input type="radio" name="size" value="personal"> Personal<br>
+                            <input type="radio" name="size" value="medium"> Medium<br>
+                            <input type="radio" name="size" value="large"> Large<br>
+                            <input type="radio" name="size" value="extra large"> Extra Large
+                        </form>            
+                    </div>
+                </div>
+        
+                <div class="pizza_part radio_selection">
+                    <div class="in-radio">
+                        <div class="section-title">Crust</div>
+                        <form action="">
+                            <input type="radio" name="Crust" value="plain"> Plain<br>
+                            <input type="radio" name="Crust" value="garlic butter"> Garlic Butter<br>
+                            <input type="radio" name="Crust" value="cheese stuffed"> Cheese Stuffed<br>
+                            <input type="radio" name="Crust" value="spicy"> Spicy<br>
+                            <input type="radio" name="Crust" value="house special"> House Special
+                        </form>
+                    </div>
+                </div>
+    
+                <div class="pizza_part radio_selection">
+                    <div class="in-radio">
+                        <div class="section-title">Cheese</div>
+                        <form action="">
+                            <input type="radio" name="Cheese" value="regular"> Regular<br>
+                            <input type="radio" name="Cheese" value="no cheese"> No Cheese<br>
+                            <input type="radio" name="Cheese" value="extra cheese"> Extra Cheese
+                        </form>
+                    </div>
+                </div>
+    
+                <div class="pizza_part radio_selection">
+                    <div class="in-radio">
+                        <div class="section-title">Sauce</div>
+                        <form action="">
+                            <input type="radio" name="Sauce" value="marinara"> Marinara<br>
+                            <input type="radio" name="Sauce" value="white"> White<br>
+                            <input type="radio" name="Sauce" value="barbeque"> Barbeque<br>
+                            <input type="radio" name="Sauce" value="none"> None
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="checklist-container">
+                <div class="pizza_part checklist">
+                    <div class="section-title">Meat</div>
+                    <form class="mv-class" action="">
+                        <input type="checkbox" name="Meat" value="pepperoni"> Pepperoni
+                        <input type="checkbox" name="Meat" value="sausage"> Sausage
+                        <input type="checkbox" name="Meat" value="canadian bacon">  Canadian Bacon<br>
+                        <input type="checkbox" name="Meat" value="ground beef"> Ground Beef
+                        <input type="checkbox" name="Meat" value="anchovy"> Anchovy
+                        <input type="checkbox" name="Meat" value="chicken"> Chicken
+                    </form>
+                </div>
+    
+                <div class="pizza_part checklist">
+                    <div class="section-title">Veggies</div>
+                    <form class="mv-class" action="">
+                        <input type="checkbox" name="veggies" value="tomatoes">  Tomatoes
+                        <input type="checkbox" name="veggies" value="olives"> Olives
+                        <input type="checkbox" name="veggies" value="mushrooms"> Mushrooms
+                        <input type="checkbox" name="veggies" value="spinach"> Spinach<br>
+                        <input type="checkbox" name="veggies" value="onions"> Onions
+                        <input type="checkbox" name="veggies" value="green peppers"> Green Peppers
+                        <input type="checkbox" name="veggies" value="pineapple"> Pineapple
+                        <input type="checkbox" name="veggies" value="jalapeno"> Jalapeno 
+                        
+                    </form>
+                </div>
+            </div>
+
+            <!--Cancel and Order buttons / est total price-->
+
+            <div class="button-container">
+
+                <input id="order" type="button" name="order-btn" value="Order!">
+                <input id="cancel" type="button" name="cancel-btn" value="Cancel">
+                <div id="total">
+                      Est Total:  &#36;0.00
+                </div>
+
+            </div>
+
+            <!--End buttons / est total price-->
+            
+            
+        </main>
+        <!--end pizza order-->
+    <!--END PAGE CONTENT-->
+        
+
+        <script>
+
+
+
+        </script>
+    </body>
+</html>
