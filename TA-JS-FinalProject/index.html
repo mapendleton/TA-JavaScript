@@ -98,10 +98,10 @@
 
             <div class="button-container">
 
-                <input id="order" type="button" onclick="AddTotal()" name="order-btn" value="Order!">
+                <input id="order" type="button" onclick="Reciept()" name="order-btn" value="Order!">
                 <input id="cancel" type="button" onclick="Cancel()" name="cancel-btn" value="Cancel">
                 <div id="total">
-                      Est Total:  &#36;6
+                      Est Total:  &#36; 6
                 </div>
 
             </div>
@@ -117,7 +117,8 @@
                             <li></li>
                             <li></li>
                             <li></li>
-                            <li>Toppings = </li>
+                            <li id="toppingListItem">Toppings = </li>
+                            <li class="footer" id="footer-total-title"></li>
                         </ul>
                     </div>
                     <div class="list-container lc2">
@@ -128,6 +129,7 @@
                             <li></li>
                             <li></li>
                             <li></li>
+                            <li class="footer" id="footer-total"></li>
                         </ul>
                     </div>
                     
@@ -151,18 +153,16 @@
             var veggies = document.getElementsByName("veggies");
             var yourOrder = document.getElementById("orders").getElementsByTagName("li");
             var yourCost = document.getElementById("cost").getElementsByTagName("li");
-            var totalDisplay = document.getElementById("total").innerHTML;
+            var hideReciept = document.getElementById("order-review");
             
+            //incase cost of items change, change cost in one place
             var personalCost = 6;
             var mediumCost = 10;
             var largeCost = 14;
             var extraLargeCost = 16;
             var stuffedCheeseCost = 3;
             var extraCheeseCost = 3;
-            var meat_Veggie_Count = 0;
-            var toppingsNum = 0; 
-
-            //incase cost of items change, change cost in one place
+            //used to display total price as user selects items
             var estsizeTotal = personalCost;
             var estCheeseTotal = 0;
             var estCrustTotal = 0;
@@ -186,26 +186,23 @@
                     {
                         estsizeTotal = 0;
                         estsizeTotal += personalCost;
-                        DisplayTotal();
                     }
                     else if(elem.id == 's1')
                     {
                         estsizeTotal = 0;
                         estsizeTotal += mediumCost;
-                        DisplayTotal();
                     }
                     else if(elem.id == 's2')
                     {
                         estsizeTotal = 0;
                         estsizeTotal += largeCost;
-                        DisplayTotal();
                     }
                     else if(elem.id == 's3')
                     {
                         estsizeTotal = 0;
                         estsizeTotal += extraLargeCost;
-                        DisplayTotal();
                     }
+                    DisplayTotal();
                 }
                 else if(elem.name == "Crust")
                 {
@@ -213,13 +210,12 @@
                     {
                         estCrustTotal = 0;
                         estCrustTotal += stuffedCheeseCost;
-                        DisplayTotal();
                     }
                     else
                     {
                         estCrustTotal = 0;
-                        DisplayTotal();
                     }
+                    DisplayTotal();
                 }
                 else if(elem.name == "Cheese")
                 {
@@ -227,13 +223,12 @@
                     {
                         estCheeseTotal = 0;
                         estCheeseTotal += extraCheeseCost;
-                        DisplayTotal();
                     }
                     else
                     {
                         estCheeseTotal = 0;
-                        DisplayTotal();
                     }
+                    DisplayTotal();
                 }
                 else if(elem.name == "Meat")
                 {
@@ -282,126 +277,76 @@
             function DisplayTotal()
             {
                 document.getElementById("total").innerHTML = "Est Total: &#36; " + (estsizeTotal + estCheeseTotal + estCrustTotal + estMeatTotal + estVegTotal);
-                console.log(estMeatTotal);
-                console.log(estVegTotal);
             }
 
-            function AddTotal(){
-                total = 0;
-                //adds total from each section
-
-                total += AddSectionTotal(pizzaSize);
-                total += AddSectionTotal(pizzaCrust);
-                total += AddSectionTotal(pizzaSauce);
-                total += AddSectionTotal(pizzaCheese);
-                total += AddSectionTotal(meats);
-                meat_Veggie_Count = 0;
-                total += AddSectionTotal(veggies);
-
-                document.getElementById("total").innerHTML = ("Total: &#36; " + total);
-                document.getElementById("order-review").style.visibility = "visible";
-            }
-
-            function AddSectionTotal(pizzaElement)
+            function Reciept()
             {
-                var total = 0;
-                var myArray = pizzaElement;
-                for (i = 0; i < myArray.length; i++) 
+                //reset topping list
+                document.getElementById("toppingListItem").innerHTML = "";
+
+                var p_sections = [pizzaSize,pizzaCrust,pizzaCheese,pizzaSauce,meats,veggies];
+                var a = 0;
+
+                for(var i = 0; i < p_sections.length; i++)
                 {
-                    if(myArray[i].name == "Size")
-                    { //if array is for pizza size, find what size is selected, add to total, and display on reciept
-                        if(myArray[i].checked)
-                        {
-                            //(myArray[i].value == 'personal') ? (total += 6) : ((myArray[i].value == 'medium') ? (total += 10) : ((myArray[i].value == 'large') ? (total += 14) : ((myArray[i].value == 'extra large') ? (total += 16) : (total = 0);););); //Ternary if = confusing and not working
-                            if(myArray[i].value == 'personal')
-                            {
-                                total += personalCost;
-                                yourOrder[0].innerHTML = "Size = Personal Pizza";
-                                yourCost[0].innerHTML = "&#36; " + personalCost;
-                            }
-                            else if(myArray[i].value == 'medium')
-                            {
-                                total += mediumCost;
-                                yourOrder[0].innerHTML = "Size = Medium Pizza";
-                                yourCost[0].innerHTML = "&#36; " + mediumCost;
-                            }
-                            else if(myArray[i].value == 'large')
-                            {
-                                total += largeCost;
-                                yourOrder[0].innerHTML = "Size = Large Pizza";
-                                yourCost[0].innerHTML = "&#36; " + largeCost;
-                            }
-                            else if(myArray[i].value == 'extra large')
-                            {
-                                total += extraLargeCost;
-                                yourOrder[0].innerHTML = "Size = Extra Large Pizza";
-                                yourCost[0].innerHTML = "&#36; " + extraLargeCost;
-                            }
-                            
-                        }
-                    }
-                    else if(myArray[i].name == "Crust")
-                    { //if array is for pizza crust, find what crust is selected, add to total, and display on reciept
-                        if(myArray[i].checked)
-                        {
-                            if(myArray[i].value == 'cheese stuffed')
-                            {
-                                total += stuffedCheeseCost;
-                                yourOrder[1].innerHTML = "Crust = Cheese Stuffed";
-                                yourCost[1].innerHTML = "&#36; +" + stuffedCheeseCost;
-                            }
-                            else
-                            {
-                                yourOrder[1].innerHTML = "Crust = " + myArray[i].value;
-                                yourCost[1].innerHTML = "&#36; +" + total;
-                            }
-                        }
-                    }
-                    else if(myArray[i].name == "Cheese")
-                    { //if array is for pizza cheese, find what cheese is selected, add to total, and display on reciept
-                        if(myArray[i].checked)
-                        {
-                            if(myArray[i].value == 'extra cheese')
-                            {
-                                total += extraCheeseCost;
-                                yourOrder[2].innerHTML = "Cheese = Extra";
-                                yourCost[2].innerHTML = "&#36; +" + extraCheeseCost;
-                            }
-                            else
-                            {
-                                yourOrder[2].innerHTML = "Cheese = " + myArray[i].value;
-                                yourCost[2].innerHTML = "&#36; +" + 0;
-                            }
-                        }
-                    }
-                    else if(myArray[i].name == "Sauce" && myArray[i].checked)
-                    { //if array is for pizza sauce, find what sauce is selected, add to total, and display on reciept
-                            yourOrder[3].innerHTML = "Sauce = " + myArray[i].value;
-                            yourCost[3].innerHTML = "&#36; +" + 0;
-                    }
-                    else if((myArray[i].name == "Meat" || myArray[i].name == "veggies") && myArray[i].checked)
-                    { //if array is for toppings; meat or veggies, find what toppings are selected, add to total, and display on reciept
-                        yourOrder[4].innerHTML += ", " + myArray[i].value;
-                        if(meat_Veggie_Count > 0)
-                        {
-                            total += 1; //first topping is free
-                            yourCost[4].innerHTML = "&#36; +" + ++toppingsNum;
-                        }
-                        meat_Veggie_Count++;
-                    }
                     
+                    p_sections[i].forEach(element => 
+                    {
+                        if(element.checked)
+                        {
+                            if(element.name !== "Meat" && element.name !== "veggies")
+                            {
+                                    yourOrder[a].innerHTML = element.name + ": " + element.value;
+
+                                if(element.id == 's0')
+                                {
+                                    yourCost[a].innerHTML = "&#36; " + personalCost;
+                                }
+                                else if(element.id == 's1')
+                                {
+                                    yourCost[a].innerHTML = "&#36; " + mediumCost;
+                                }
+                                else if(element.id == 's2')
+                                {
+                                    yourCost[a].innerHTML = "&#36; " + largeCost;
+                                }
+                                else if(element.id == 's2')
+                                {
+                                    yourCost[a].innerHTML = "&#36; " + extraLargeCost;
+                                }
+                                else if(element.id == 'c2')
+                                {
+                                    yourCost[a].innerHTML = "&#36; " + stuffedCheeseCost;
+                                }
+                                else if(element.id == 'ch2')
+                                {
+                                    yourCost[a].innerHTML = "&#36; " + extraCheeseCost;
+                                }
+                                else
+                                {
+                                    yourCost[a].innerHTML = "&#36; " + 0;
+                                }
+                            }
+                            else
+                            {
+                                yourOrder[a].innerHTML += element.value + ", ";
+                                yourCost[a].innerHTML = "&#36; " + (estVegTotal + estMeatTotal);
+                                a--;
+                            }
+                            a++;
+                        }
+                            
+                    });
                 }
-                return total;
+                document.getElementById("total").innerHTML = "Total: &#36; " + (estsizeTotal + estCheeseTotal + estCrustTotal + estMeatTotal + estVegTotal);
+                document.getElementById("footer-total-title").innerHTML = "Total";
+                document.getElementById("footer-total").innerHTML = "&#36; " + (estsizeTotal + estCheeseTotal + estCrustTotal + estMeatTotal + estVegTotal);
+                hideReciept.style.visibility = "visible";  
             }
-        
 
             function Cancel()
             {
-                total = 0;
-                document.getElementById("total").innerHTML = ("Est Total: &#36; " + total);
-                document.getElementById("order-review").style.visibility = "hidden";
-                toppingsNum = 0;
-                meat_Veggie_Count = 0;
+                hideReciept.style.visibility = "hidden";
                 yourCost[4].innerHTML = "" ;
                 yourOrder[4].innerHTML = "Toppings = ";
                 
@@ -424,6 +369,7 @@
                 veggies.forEach(element => {
                     element.checked = false;
                 });
+                DisplayTotal();
             } 
 
         </script>

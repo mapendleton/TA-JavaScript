@@ -122,6 +122,13 @@ ul{
     list-style-type: none;
 }
 
+.footer{
+    font-size: large;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 1em;
+    border-top: 2px solid black;
+}
 /*----------------------------------
             End Order Review
 ----------------------------------*/
