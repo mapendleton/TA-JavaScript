@@ -97,11 +97,11 @@ input[type="radio"]{
             Order Review
 ----------------------------------*/
 
-.order-review{
+#order-review{
     width: 100%;
     display: inline-flex;
     justify-content: center;
-    
+    visibility: hidden;
 }
 
 .list-container{
