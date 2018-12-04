@@ -176,7 +176,7 @@
                 meat_Veggie_Count = 0;
                 total += AddSectionTotal(veggies);
 
-                document.getElementById("total").innerHTML = ("Est Total: &#36; " + total);
+                document.getElementById("total").innerHTML = ("Total: &#36; " + total);
                 document.getElementById("order-review").style.visibility = "visible";
             }
 
@@ -226,12 +226,12 @@
                             {
                                 total += stuffedCheeseCost;
                                 yourOrder[1].innerHTML = "Crust = Cheese Stuffed";
-                                yourCost[1].innerHTML = "&#36; " + stuffedCheeseCost;
+                                yourCost[1].innerHTML = "&#36; +" + stuffedCheeseCost;
                             }
                             else
                             {
                                 yourOrder[1].innerHTML = "Crust = " + myArray[i].value;
-                                yourCost[1].innerHTML = "&#36; " + total;
+                                yourCost[1].innerHTML = "&#36; +" + total;
                             }
                         }
                     }
@@ -243,19 +243,19 @@
                             {
                                 total += extraCheeseCost;
                                 yourOrder[2].innerHTML = "Cheese = Extra";
-                                yourCost[2].innerHTML = "&#36; " + extraCheeseCost;
+                                yourCost[2].innerHTML = "&#36; +" + extraCheeseCost;
                             }
                             else
                             {
                                 yourOrder[2].innerHTML = "Cheese = " + myArray[i].value;
-                                yourCost[2].innerHTML = "&#36; 0";
+                                yourCost[2].innerHTML = "&#36; +" + 0;
                             }
                         }
                     }
                     else if(myArray[i].name == "Sauce" && myArray[i].checked)
                     { //if array is for pizza sauce, find what sauce is selected, add to total, and display on reciept
                             yourOrder[3].innerHTML = "Sauce = " + myArray[i].value;
-                            yourCost[3].innerHTML = "&#36; 0";
+                            yourCost[3].innerHTML = "&#36; +" + 0;
                     }
                     else if((myArray[i].name == "Meat" || myArray[i].name == "veggies") && myArray[i].checked)
                     { //if array is for toppings; meat or veggies, find what toppings are selected, add to total, and display on reciept
@@ -263,7 +263,7 @@
                         if(meat_Veggie_Count > 0)
                         {
                             total += 1; //first topping is free
-                            yourCost[4].innerHTML = "&#36; " + ++toppingsNum;
+                            yourCost[4].innerHTML = "&#36; +" + ++toppingsNum;
                         }
                         meat_Veggie_Count++;
                     }
