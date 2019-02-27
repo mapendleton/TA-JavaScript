@@ -77,7 +77,6 @@ html, body {
     left: 50px;
 }
 
-
 /*--------------------------------------------------
                     End Nav Bar 
  ---------------------------------------------------*/
@@ -131,6 +130,71 @@ html, body {
      width: 100%;
      background-color: blueviolet;
  }
+
+ /* circle rotater */
+.rotater {
+    transition: transform 1s;
+    position: absolute;
+    /* puts it behind nav bar */
+    z-index: -1;
+    top: 20px;
+    left: 20px;
+    border-radius: 50%;
+    height: 230px;
+    width: 230px;
+}
+
+.rotate_rotater {
+    transform: rotate(180deg);
+}
+
+.rotater_child {
+    transition: all 0.5s ease-out;
+    top: 50%; left: 50%;
+    margin: -25px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.rotater_exp_buttons {
+    opacity: 1;
+    visibility: visible;
+    background-color: aqua;
+    border-style: solid;
+}
+
+/* seperate hover effect for exp buttons */
+.rotater_exp_buttons:hover {
+    background-color: greenyellow;
+    box-shadow: -5px -5px 15px 2px rgba(0,0,0,0.4);
+}
+
+/* shadow on each button changes depending on location from home picture (like sun) */
+.rotater_exp_buttons.deg270:hover {
+    box-shadow: -2px -5px 15px 2px rgba(0,0,0,0.4);
+}
+
+.rotater_exp_buttons.deg180:hover {
+    box-shadow: -5px -2px 15px 2px rgba(0,0,0,0.4);
+}
+
+/* img on exp buttons */
+.sub_pic,
+.costco_pic {
+    height: 105%;
+    width: 110%;
+    overflow: hidden;
+    transform: rotate(180deg);
+}
+
+.thai_pic {
+    transform: rotate(180deg);
+}
+
+/* positions on circle */
+.deg180 {transform: translate(-115px);}
+.deg225 {transform: rotate(225deg) translate(115px) rotate(-225deg);}
+.deg270 { transform: rotate(270deg) translate(115px) rotate(-270deg); }
 
   /*--------------------------------------------------
                     End Exp Page

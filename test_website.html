@@ -29,18 +29,27 @@
                     </button>
                 </div>
             </div>
-            <button class="nav_button nav_button_exp">
-                exp
-            </button>
+            <div class="dropdown">
+                <!--main nav button-->
+                <button class="nav_button nav_button_exp" onclick="OpenExpMenu();">
+                    exp
+                </button>
+            </div>
             <button class="nav_button nav_button_git">
                 <i class="fab fa-github fa-2x"></i>
             </button>
+            <!--Circle to rotate buttons on-->
+            <div id="rotater" class="rotater">
+                <button id="sub" class="nav_button rotater_child deg225"><img class="sub_pic" src="./img/sub_pic.png" alt="sub"></button>
+                <button id="costco" class="nav_button rotater_child deg270"><img class="costco_pic" src="./img/costco-logo.png" alt="costco"></button>
+                <button class="nav_button rotater_child deg180"><i class="thai_pic fas fa-chalkboard-teacher fa-2x"></i></button>
+            </div>
         </div>
         <!--End Nav Bar-->
 
         <!--Skills content-->
         <div class="skills_background">
-            
+
         </div>
         <!--End Skills content-->
 
@@ -52,14 +61,26 @@
 
         <!--Scripting-->
         <script>
-            function OpenSkillsMenu() 
+            function OpenSkillsMenu()
             {
                 var htmlButton = document.getElementById("html");
                 var cssButton = document.getElementById("css");
-                
+
                 htmlButton.classList.toggle("skill_button_html");
                 cssButton.classList.toggle("skill_button_css");
             }
+
+            function OpenExpMenu()
+            {
+                var rotater = document.getElementById("rotater");
+                rotater.classList.toggle("rotate_rotater");
+
+                var exp_buttons = document.getElementsByClassName("rotater_child");
+                for (let i = 0; i < exp_buttons.length; i++) {
+                    exp_buttons[i].classList.toggle("rotater_exp_buttons");
+                }
+            }
+
         </script>
     </body>
 </html>
