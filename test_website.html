@@ -14,9 +14,21 @@
             <button class="nav_button_home">
                 <img class="self_photo_container" src="./img/Our wedding.jpg" alt="self photo">
             </button>
-            <button class="nav_button nav_button_skills">
-                skills
-            </button>
+            <div class="dropdown">
+                <!--main nav button-->
+                <button class="nav_button nav_button_skills" onclick="OpenSkillsMenu();">
+                    skills
+                </button>
+                <!--dropdown buttons-->
+                <div class="skills_menu">
+                    <button id="html" class="nav_button skills_button">
+                        <i class="fab fa-html5 fa-2x"></i>
+                    </button>
+                    <button id="css" class="nav_button skills_button">
+                        <i class="fab fa-css3-alt fa-2x"></i>
+                    </button>
+                </div>
+            </div>
             <button class="nav_button nav_button_exp">
                 exp
             </button>
@@ -24,7 +36,30 @@
                 <i class="fab fa-github fa-2x"></i>
             </button>
         </div>
-            
         <!--End Nav Bar-->
+
+        <!--Skills content-->
+        <div class="skills_background">
+            
+        </div>
+        <!--End Skills content-->
+
+        <!--Experience content-->
+        <div class="exp_background">
+
+        </div>
+        <!--End Experience content-->
+
+        <!--Scripting-->
+        <script>
+            function OpenSkillsMenu() 
+            {
+                var htmlButton = document.getElementById("html");
+                var cssButton = document.getElementById("css");
+                
+                htmlButton.classList.toggle("skill_button_html");
+                cssButton.classList.toggle("skill_button_css");
+            }
+        </script>
     </body>
 </html>

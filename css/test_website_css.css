@@ -1,11 +1,24 @@
+/*gets rid of blue highlight on buttons*/
+button:focus {
+    outline: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    border: 0;
+    margin: 0;
+}
+
+/*--------------------------------------------------
+                    Nav Bar 
+ ---------------------------------------------------*/
 .nav_bar {
     position: fixed;
     height: 250px;
     width: 250px;
-}
-/*gets rid of blue highlight on buttons*/
-button:focus {
-    outline: 0;
+    top: 10px;
+    left: 10px;
 }
 
 .nav_button_home {
@@ -14,7 +27,7 @@ button:focus {
     height: 150px;
     width: 150px;
     padding: 0;
-    background-color: blue;
+    background-color: chartreuse;
     border: 2px solid black;
     cursor: pointer;
     transition-duration: 0.3s;
@@ -63,3 +76,62 @@ button:focus {
     top: 175px;
     left: 50px;
 }
+
+
+/*--------------------------------------------------
+                    End Nav Bar 
+ ---------------------------------------------------*/
+
+ /*--------------------------------------------------
+                    Skills Page
+ ---------------------------------------------------*/
+
+ .skills_background {
+    height: 100%;
+    width: 100%;
+    background-color: aqua;
+ }
+
+ .skills_menu {
+
+ }
+
+ .skills_button {
+    transition: all 0.3s linear;
+    top: 50px;
+    left: 175px;
+    opacity: 0;
+    visibility: hidden;
+ }
+
+ .skill_button_html,
+ .skill_button_css {
+    opacity: 1;
+    visibility: visible;
+ }
+
+ .skill_button_html {
+    left: 250px;
+ }
+
+ .skill_button_css {
+    left: 325px;
+ }
+
+  /*--------------------------------------------------
+                    End Skills Page
+ ---------------------------------------------------*/
+
+  /*--------------------------------------------------
+                    Exp Page
+ ---------------------------------------------------*/
+
+ .exp_background {
+     height: 100%;
+     width: 100%;
+     background-color: blueviolet;
+ }
+
+  /*--------------------------------------------------
+                    End Exp Page
+ ---------------------------------------------------*/
