@@ -82,7 +82,7 @@ html, body {
  ---------------------------------------------------*/
 
  /*--------------------------------------------------
-                    Skills Page
+                    Skills Section
  ---------------------------------------------------*/
 
  .skills_background {
@@ -96,7 +96,7 @@ html, body {
  }
 
  .skills_button {
-    transition: all 0.3s linear;
+    transition: all 0.3s ease-out .1s;
     top: 50px;
     left: 175px;
     opacity: 0;
@@ -118,11 +118,11 @@ html, body {
  }
 
   /*--------------------------------------------------
-                    End Skills Page
+                    End Skills Section
  ---------------------------------------------------*/
 
   /*--------------------------------------------------
-                    Exp Page
+                    Exp Section
  ---------------------------------------------------*/
 
  .exp_background {
@@ -149,7 +149,7 @@ html, body {
 }
 
 .rotater_child {
-    transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out 0.1s;
     top: 50%; left: 50%;
     margin: -25px;
     opacity: 0;
@@ -197,5 +197,35 @@ html, body {
 .deg270 { transform: rotate(270deg) translate(115px) rotate(-270deg); }
 
   /*--------------------------------------------------
-                    End Exp Page
+                    End Exp Section
+ ---------------------------------------------------*/
+
+   /*--------------------------------------------------
+                    Contact Section
+ ---------------------------------------------------*/
+.contact_button {
+    transition: all 0.3s ease-out .1s;
+    top: 175px;
+    left: 50px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.contact_button_linkedin,
+.contact_button_email {
+    opacity: 1;
+    visibility: visible;
+}
+
+.contact_button_linkedin {
+    top: 250px;
+}
+
+.contact_button_email {
+    top: 325px;
+}
+
+
+   /*--------------------------------------------------
+                    End Contact Section
  ---------------------------------------------------*/
