@@ -169,7 +169,8 @@ html, body {
 }
 
 .skill_button_html,
-.skill_button_css {
+.skill_button_css,
+.skill_button_js {
     opacity: 1;
     visibility: visible;
 }
@@ -180,6 +181,10 @@ html, body {
 
 .skill_button_css {
     left: 325px;
+}
+
+.skill_button_js {
+    left: 400px;
 }
 
   /*--------------------------------------------------
