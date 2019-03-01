@@ -8,6 +8,17 @@ html, body {
     width: 100%;
     border: 0;
     margin: 0;
+    scroll-behavior: smooth;
+}
+
+/* HOME PAGE */
+
+#home {
+    height: 100%; width: 100%;
+    background-image: url("../img/background-pic.png");
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 /*--------------------------------------------------
@@ -42,6 +53,19 @@ html, body {
     border-radius: 50%;
     height: 100%;
     width: 100%;
+    background-image: url('../img/Our-wedding.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.4s linear;
+}
+
+.photo_change1 {
+    background-image: url('../img/mom-and-I.jpg');
+}
+
+.photo_change2 {
+    background-image: url('../img/Bros-pic.jpg');
 }
 
 .nav_button {
@@ -80,6 +104,37 @@ html, body {
 /*--------------------------------------------------
                     End Nav Bar 
  ---------------------------------------------------*/
+
+ /*--------------------------------------------------
+                    Pop Up Section 
+ ---------------------------------------------------*/
+ .popup {
+    position: fixed;
+    height: 400px; width: 0;
+    opacity: 0;
+    top: 200px; left: 300px;
+    background-color: slategray;
+    transition: all 0.3s ease-out;
+ }
+
+ .popup_appear {
+    width: 700px;
+    opacity: 1;
+ }
+
+ .text_box {
+    position: absolute;
+    height: 100%; width: 50%;
+    right: 50%;
+    background-color: yellow;
+ }
+
+ .img_container {
+     position: absolute;
+     height: 100%; width: 50%;
+     left: 50%;
+     background-color: violet;
+ }
 
  /*--------------------------------------------------
                     Skills Section
