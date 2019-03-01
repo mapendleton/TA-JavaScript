@@ -108,69 +108,79 @@ html, body {
  /*--------------------------------------------------
                     Pop Up Section 
  ---------------------------------------------------*/
- .popup {
+.popup {
     position: fixed;
     height: 400px; width: 0;
     opacity: 0;
     top: 200px; left: 300px;
-    background-color: slategray;
-    transition: all 0.3s ease-out;
- }
+    /* disappears faster when changed so you can't see text try to fill a smaller div */
+    transition: width .6s ease-out, opacity .1s linear;
+}
 
- .popup_appear {
+.popup_appear {
     width: 700px;
     opacity: 1;
- }
+    transition: width 0.6s ease-out, opacity 0.3s linear .2s;
+}
 
- .text_box {
+/* changes the font awesome icon size */
+.popup i {
+    font-size: 16em;
+}
+/* changes popup text */
+.popup p {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 20px;
+}
+
+.text_box {
     position: absolute;
+    text-align: center;
     height: 100%; width: 50%;
     right: 50%;
-    background-color: yellow;
- }
+}
 
- .img_container {
-     position: absolute;
-     height: 100%; width: 50%;
-     left: 50%;
-     background-color: violet;
- }
+.img_container {
+    position: absolute;
+    height: 100%; width: 50%;
+    left: 50%;
+}
 
  /*--------------------------------------------------
                     Skills Section
  ---------------------------------------------------*/
 
- .skills_background {
+.skills_background {
     height: 100%;
     width: 100%;
     background-color: aqua;
- }
+}
 
- .skills_menu {
+.skills_menu {
 
- }
+}
 
- .skills_button {
+.skills_button {
     transition: all 0.3s ease-out .1s;
     top: 50px;
     left: 175px;
     opacity: 0;
     visibility: hidden;
- }
+}
 
- .skill_button_html,
- .skill_button_css {
+.skill_button_html,
+.skill_button_css {
     opacity: 1;
     visibility: visible;
- }
+}
 
- .skill_button_html {
+.skill_button_html {
     left: 250px;
- }
+}
 
- .skill_button_css {
+.skill_button_css {
     left: 325px;
- }
+}
 
   /*--------------------------------------------------
                     End Skills Section
@@ -180,11 +190,11 @@ html, body {
                     Exp Section
  ---------------------------------------------------*/
 
- .exp_background {
-     height: 100%;
-     width: 100%;
-     background-color: blueviolet;
- }
+.exp_background {
+    height: 100%;
+    width: 100%;
+    background-color: blueviolet;
+}
 
  /* circle rotater */
 .rotater {
