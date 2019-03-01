@@ -103,14 +103,24 @@
         <script>
             function OpenNavMenu(className,toggle1,toggle2,toggle3)
             {
-                var buttons = document.getElementsByClassName(className);
                 //for if I add more buttons
-                // var buttons = [button1,button2,button3];
+                var buttons = document.getElementsByClassName(className);
                 var toggles = [toggle1,toggle2,toggle3];
                 for (let i = 0; i < buttons.length; i++) {
-                    // var button = document.getElementById(buttons[i]);
                     if (buttons[i] != null) {
                         buttons[i].classList.toggle(toggles[i]);
+                    }
+                }
+                ClosePopUp();
+            }
+            //closes whatever pop up is up
+            function ClosePopUp() 
+            {
+                var popups = document.getElementsByClassName('popup');
+                for (let i = 0; i < popups.length; i++) {
+                    const element = popups[i];
+                    if (element.classList.contains('popup_appear')) {
+                        element.classList.toggle('popup_appear');
                     }
                 }
             }
