@@ -16,8 +16,8 @@
             </a>
             <div class="dropdown">
                 <!--main nav button SKILLS-->
-                <button class="nav_button nav_button_skills" onclick="OpenNavMenu('skills_button','skill_button_html','skill_button_css','skill_button_js');">
-                    skills
+                <button class="nav_button nav_button_skills" onclick="OpenNavMenu('skills_button','skill_button_html','skill_button_css','skill_button_js','skill_button_microsoft');">
+                    Skills
                 </button>
                 <!--dropdown buttons-->
                 <div class="skills_menu">
@@ -30,31 +30,37 @@
                     <button id="js" class="nav_button skills_button" onclick="SwitchPopUpSection('jsPopUp')">
                         <i class="fab fa-js-square fa-2x"></i>
                     </button>
+                    <button id="microsoft" class="nav_button skills_button" onclick="SwitchPopUpSection('microsoftPopUp')">
+                        <i class="fab fa-windows fa-2x"></i>
+                    </button>
                 </div>
             </div>
             <div class="dropdown">
                 <!--main nav button EXP-->
                 <button class="nav_button nav_button_exp" onclick="OpenExpMenu();">
-                    exp
+                    Exp
                 </button>
                 <!--Circle to rotate buttons on-->
                 <div id="rotater" class="rotater">
-                    <button id="sub" class="nav_button rotater_child deg225"><img class="sub_pic" src="./img/sub_pic.png" alt="sub"></button>
-                    <button id="costco" class="nav_button rotater_child deg270"><img class="costco_pic" src="./img/costco-logo.png" alt="costco"></button>
-                    <button class="nav_button rotater_child deg180"><i class="thai_pic fas fa-chalkboard-teacher fa-2x"></i></button>
+                    <button id="sub" class="nav_button rotater_child deg225" onclick="SwitchPopUpSection('subPopUp');"><img class="sub_pic" src="./img/sub_pic.png" alt="sub"></button>
+                    <button id="costco" class="nav_button rotater_child deg270" onclick="SwitchPopUpSection('costcoPopUp');"><img class="costco_pic" src="./img/costco-logo.png" alt="costco"></button>
+                    <button class="nav_button rotater_child deg180" onclick="SwitchPopUpSection('thailandPopUp');"><i class="thai_pic fas fa-chalkboard-teacher fa-2x"></i></button>
                 </div>      
             </div>
             <div class="dropdown">
                 <!--main nav button CONTACT-->
-                <button class="nav_button nav_button_git" onclick="OpenNavMenu('contact_button','contact_button_linkedin','contact_button_email');">
-                    <i class="fab fa-github fa-2x"></i>
+                <button class="nav_button nav_button_contact" onclick="OpenNavMenu('contact_button','contact_button_github','contact_button_linkedin','contact_button_email');">
+                    <i class="fas fa-phone fa-lg"></i>
                 </button>
                 <!--dropdown contact buttons-->
                 <div class="contact_menu">
-                    <button id="linkedin" class="nav_button contact_button">
+                    <button id="linkedin" class="nav_button contact_button" onclick="SwitchPopUpSection('githubPopUp');">
+                        <i class="fab fa-github fa-2x"></i>
+                    </button>
+                    <button id="linkedin" class="nav_button contact_button" onclick="SwitchPopUpSection('linkedinPopUp');">
                         <i class="fab fa-linkedin fa-2x"></i>
                     </button>
-                    <button id="email" class="nav_button contact_button">
+                    <button id="email" class="nav_button contact_button" onclick="SwitchPopUpSection('emailPopUp');">
                         <i class="far fa-envelope fa-2x"></i>
                     </button>
                 </div>
@@ -64,6 +70,7 @@
         <!--End Nav Bar-->
 
         <!--Nav bar pop up CONTENT-->
+            <!--skills content-->
         <div id="htmlPopUp" class="popup">
             <div class="text_box">
                 <p>Hello slide 1</p>
@@ -80,11 +87,80 @@
                 <i class="fab fa-css3-alt fa-2x"></i>
             </div>
         </div>
+        <div id="jsPopUp" class="popup">
+            <div class="text_box">
+                <p>Hey slide 3</p>
+            </div>
+            <div class="img_container">
+                <i class="fab fa-js-square fa-2x"></i>
+            </div>
+        </div>
+        <div id="microsoftPopUp" class="popup">
+            <div class="text_box">
+                <h2>ASP.NET MVC C#</h2>
+                <p>Yo slide 4</p>
+            </div>
+            <div class="img_container">
+                <i class="fab fa-windows fa-2x"></i>
+            </div>
+        </div>
+            <!--exp content-->
+        <div id="costcoPopUp" class="popup">
+            <div class="text_box">
+                costcoooo
+            </div>
+            <div class="img_container">
+
+            </div>
+        </div>
+        <div id="subPopUp" class="popup">
+            <div class="text_box">
+                subbingggg
+            </div>
+            <div class="img_container">
+
+            </div>
+        </div>
+        <div id="thailandPopUp" class="popup">
+            <div class="text_box">
+                thailandd wooo
+            </div>
+            <div class="img_container">
+
+            </div>
+        </div>
+            <!--contact content-->
+        <div id="githubPopUp" class="popup">
+            <div class="text_box">
+                <p>yoooooooooo</p>
+            </div>
+            <div class="img_container">
+                <i class="fab fa-github fa-2x"></i>
+            </div>
+        </div>
+        <div id="linkedinPopUp" class="popup">
+            <div class="text_box">
+                <p>wawawawawawa</p>
+            </div>
+            <div class="img_container">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </div>
+        </div>
+        <div id="emailPopUp" class="popup">
+            <div class="text_box">
+                <p>alksdjf;alskdjfkj</p>
+            </div>
+            <div class="img_container">
+                <i class="far fa-envelope fa-2x"></i>
+            </div>
+        </div>
         <!--End pop up CONTENT-->
 
         <!--Home page-->
         <div id="home">
+            <div id="home_text">
 
+            </div>
         </div>
 
         <!--Skills content-->
@@ -101,11 +177,11 @@
 
         <!--Scripting-->
         <script>
-            function OpenNavMenu(className,toggle1,toggle2,toggle3)
+            function OpenNavMenu(className,toggle1,toggle2,toggle3,toggle4)
             {
                 //for if I add more buttons
                 var buttons = document.getElementsByClassName(className);
-                var toggles = [toggle1,toggle2,toggle3];
+                var toggles = [toggle1,toggle2,toggle3,toggle4];
                 for (let i = 0; i < buttons.length; i++) {
                     if (buttons[i] != null) {
                         buttons[i].classList.toggle(toggles[i]);
@@ -134,6 +210,7 @@
                 for (let i = 0; i < exp_buttons.length; i++) {
                     exp_buttons[i].classList.toggle("rotater_exp_buttons");
                 }
+                ClosePopUp();
             }
 
             function Carousel()
