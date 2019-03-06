@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="./css/test_website_css.css">
         <!--Font Awesome-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <!--LinkedIn badge-->
+        <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
     </head>
     <body>
         <!--Nav Bar-->
@@ -107,26 +109,43 @@
             <!--exp content-->
         <div id="costcoPopUp" class="popup">
             <div class="text_box">
-                costcoooo
+                <p>I worked as a Costco Meat Wrapper at the Coon Rapids, MN location. 
+                    It was a physically demanding job, and a large
+                    amount of work needed to be done in a short amount of time, 
+                    while also meeting the needs of the customers. 
+                    This taught me how to find the most efficient way of performing a job in
+                    order to preserve my strength, meet my deadlines, and keep customers satisfied.</p>
             </div>
             <div class="img_container">
-
+                <img src="./img/costco-logo.png" alt="costco pic" style="height: 100%; width: 120%;">
             </div>
         </div>
         <div id="subPopUp" class="popup">
             <div class="text_box">
-                subbingggg
+                <p>I worked in the Anoka-Hennepin School district of MN. 
+                    I subbed for both High School and Middle Schools.
+                    Everyday was a new challenge. Due to the nature of the job, 
+                    I was often needed in places I was unfamiliar with, with students
+                    who didn't know me. I was put outside of my comfort zone so frequently, 
+                    that going into new, and unfamiliar situations became 
+                    easy and comfortable. I learned how to quickly adapt to solve issues as they arose.</p>
             </div>
             <div class="img_container">
-
+                <img src="./img/sub_pic.png" alt="sub">
             </div>
         </div>
         <div id="thailandPopUp" class="popup">
             <div class="text_box">
-                thailandd wooo
+                <p>I am currently teaching English in Aranyaprathet, Thailand, a growing city on the border to Cambodia. 
+                    Adding to the theme of being put outside of my comfort zone, moving to a different Country, 
+                    where English is a foreign language, was the furthest out of my comfort zone I'd ever been.
+                    I've dealt with culture-shock, language barriers, workplace issues that were hard to understand, 
+                    and much more. My experiences in Thailand have given me a new perspective of the world and 
+                    have been experiences that I will never forget. I am positive that everything I have learned here 
+                    will be vital to my success in future careers.</p>
             </div>
             <div class="img_container">
-
+                <img src="./img/5-2.jpg" alt="thai class" style="height: 100%; width: 130%; border-radius: 5%; padding-left: 10px;">
             </div>
         </div>
             <!--contact content-->
@@ -140,10 +159,11 @@
         </div>
         <div id="linkedinPopUp" class="popup">
             <div class="text_box">
-                <p>wawawawawawa</p>
+                <p>Check out my LinkedIn profile!</p>
             </div>
             <div class="img_container">
-                <i class="fab fa-linkedin fa-2x"></i>
+                <!-- <i class="fab fa-linkedin fa-2x"></i> -->
+                <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="light" data-vanity="matthew-pendleton-57524999"><a class="LI-simple-link" href='https://www.linkedin.com/in/matthew-pendleton-57524999?trk=profile-badge'>Matthew Pendleton</a></div>
             </div>
         </div>
         <div id="emailPopUp" class="popup">
@@ -159,7 +179,10 @@
         <!--Home page-->
         <div id="home">
             <div id="home_text">
-
+                <p>
+                    Hello, My name is Matthew Pendleton! <br> I'm a Software Developer. <br>
+                    Click the big button to learn more about me. 
+                </p>
             </div>
         </div>
 
@@ -197,6 +220,7 @@
                     const element = popups[i];
                     if (element.classList.contains('popup_appear')) {
                         element.classList.toggle('popup_appear');
+                        element.firstElementChild.classList.toggle('text_box_appear');
                     }
                 }
             }
@@ -249,10 +273,12 @@
                     const element = popups[i];
                     if (element.classList.contains('popup_appear') && element.id != divID) {
                         element.classList.toggle('popup_appear');
+                        element.firstElementChild.classList.toggle('text_box_appear');
                     }             
                 }
                 var popup_div = document.getElementById(divID);
                 popup_div.classList.toggle('popup_appear');
+                popup_div.firstElementChild.classList.toggle('text_box_appear');
             }
 
         </script>

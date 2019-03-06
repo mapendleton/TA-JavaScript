@@ -14,6 +14,8 @@ html, body {
 /* HOME PAGE */
 
 #home {
+    position: relative;
+    z-index: -2;
     height: 100%; width: 100%;
     background-image: url("../img/background-pic.png");
     background-position: center center;
@@ -23,9 +25,18 @@ html, body {
 /* trying to get div to behave like background attachment fixed */
 #home_text {
     position: fixed;
-    height: 100px; width: 100px;
+    z-index: -1;
+    height: 150px; width: 400px;
     top: 10px; right: 10px;
-    background-color: rgba(0, 0, 0, 0.438);
+    /* background-color: rgba(0, 0, 0, 0.438); */
+}
+
+#home_text p {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    text-shadow: -1px -1px black;
 }
 
 /*--------------------------------------------------
@@ -33,6 +44,7 @@ html, body {
  ---------------------------------------------------*/
 .nav_bar {
     position: fixed;
+    z-index: 1;
     height: 250px;
     width: 250px;
     top: 10px;
@@ -124,6 +136,7 @@ html, body {
  ---------------------------------------------------*/
 .popup {
     position: fixed;
+    z-index: 1;
     height: 400px; width: 0;
     opacity: 0;
     top: 200px; left: 300px;
@@ -144,7 +157,9 @@ html, body {
 /* changes popup text */
 .popup p {
     font-family: "Comic Sans MS", cursive, sans-serif;
-    font-size: 20px;
+    font-size: 18px;
+    color: black;
+    text-shadow: -1px -1px 2px chartreuse;
 }
 
 .text_box {
@@ -152,6 +167,14 @@ html, body {
     text-align: center;
     height: 100%; width: 50%;
     right: 50%;
+    opacity: 0;
+    /* for when it closes */
+    transition: opacity .05s;
+}
+/* separate transition for text */
+.text_box_appear {
+    opacity: 1;
+    transition: opacity .5s linear .5s;
 }
 
 .img_container {
@@ -252,11 +275,12 @@ html, body {
     visibility: visible;
     background-color: rgba(127, 255, 0, 0.384);
     border-style: groove;
+    transition-duration: .3s;
 }
 
 /* seperate hover effect for exp buttons */
 .rotater_exp_buttons:hover {
-    background-color: greenyellow;
+    background-color: chartreuse;
     box-shadow: -5px -5px 15px 2px rgba(0,0,0,0.4);
 }
 
