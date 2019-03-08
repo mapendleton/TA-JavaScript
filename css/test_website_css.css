@@ -130,19 +130,24 @@ body {
 }
 
 .nav_button_skills {
-    top: 50px;
-    left: 175px;
+    top: 30px;
+    left: 170px;
 
 }
 
 .nav_button_exp {
-    top: 135px;
-    left: 135px;
+    top: 100px;
+    left: 155px;
+}
+
+.nav_button_projects {
+    top: 155px;
+    left: 100px
 }
 
 .nav_button_contact {
-    top: 175px;
-    left: 50px;
+    top: 170px;
+    left: 30px;
 }
 
 /*--------------------------------------------------
@@ -213,25 +218,9 @@ body {
     background-color: rgba(0,0,0,0.3);
 }
 
-/* changed to background_text class */
-/* #skills_text {
-    position: absolute;
-    height: 150px; width: 400px;
-    top: 10px; right: 10px;
-    /* background-color: rgba(0, 0, 0, 0.438);
-} */
-
-/* #skills_text p {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 27px;
-    text-align: center;
-    color: chartreuse;
-    text-shadow: 3px 3px black;
-} */
-
 .skills_button {
     transition: all 0.3s ease-out .1s;
-    top: 50px;
+    top: 30px;
     left: 175px;
     opacity: 0;
     visibility: hidden;
@@ -261,11 +250,34 @@ body {
     left: 475px;
 }
 
-  /*--------------------------------------------------
+/*--------------------------------------------------
                     End Skills Section
  ---------------------------------------------------*/
 
-  /*--------------------------------------------------
+/*--------------------------------------------------
+                    Project Section
+ ---------------------------------------------------*/
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%; width: 100%;
+    padding: 20px 10px 10px 10px;
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 8px;
+}
+
+.project {
+    height: 160px; width: 200px;
+    background-color: yellow;
+    margin: 15px auto;
+}
+
+/*--------------------------------------------------
+                    End Project Section
+ ---------------------------------------------------*/
+
+/*--------------------------------------------------
                     Exp Section
  ---------------------------------------------------*/
 
@@ -353,7 +365,7 @@ body {
 .contact_button {
     transition: all 0.3s ease-out .1s;
     top: 175px;
-    left: 50px;
+    left: 30px;
     opacity: 0;
     visibility: hidden;
 }

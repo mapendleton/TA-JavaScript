@@ -50,14 +50,22 @@
                 </div>      
             </div>
             <div class="dropdown">
+                <!--main nav button PROJECTS-->
+                <button class="nav_button nav_button_projects" onclick="SwitchPopUpSection('projectsPopUp');">
+                    My work
+                </button>
+            </div>
+            <div class="dropdown">
                 <!--main nav button CONTACT-->
                 <button class="nav_button nav_button_contact" onclick="OpenNavMenu('contact_button','contact_button_github','contact_button_linkedin','contact_button_email');">
                     <i class="fas fa-phone fa-lg"></i>
                 </button>
                 <!--dropdown contact buttons-->
                 <div class="contact_menu">
-                    <button id="linkedin" class="nav_button contact_button" onclick="SwitchPopUpSection('githubPopUp');">
-                        <i class="fab fa-github fa-2x"></i>
+                    <button id="github" class="nav_button contact_button">
+                        <a href="https://github.com/mapendleton" target="_blank">
+                            <i class="fab fa-github fa-2x" style="color: black;"></i>
+                        </a>
                     </button>
                     <button id="linkedin" class="nav_button contact_button" onclick="SwitchPopUpSection('linkedinPopUp');">
                         <i class="fab fa-linkedin fa-2x"></i>
@@ -148,15 +156,38 @@
                 <img src="./img/5-2.jpg" alt="thai class" style="height: 100%; width: 130%; border-radius: 5%; padding-left: 10px;">
             </div>
         </div>
+            <!--Projects content-->
+        <div id="projectsPopUp" class="popup">
+            <div class="flex-container">
+                <div class="project">
+
+                </div>
+                <div class="project">
+
+                </div>
+                <div class="project">
+
+                </div>
+                <div class="project">
+
+                </div>
+                <div class="project">
+
+                </div>
+                <div class="project">
+
+                </div>
+            </div>
+        </div>
             <!--contact content-->
-        <div id="githubPopUp" class="popup">
+        <!-- <div id="githubPopUp" class="popup">
             <div class="text_box">
                 <p>yoooooooooo</p>
             </div>
             <div class="img_container">
                 <i class="fab fa-github fa-2x"></i>
             </div>
-        </div>
+        </div> -->
         <div id="linkedinPopUp" class="popup">
             <div class="text_box">
                 <p>Check out my LinkedIn profile!</p>
