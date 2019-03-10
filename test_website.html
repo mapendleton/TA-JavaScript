@@ -67,8 +67,10 @@
                             <i class="fab fa-github fa-2x" style="color: black;"></i>
                         </a>
                     </button>
-                    <button id="linkedin" class="nav_button contact_button" onclick="SwitchPopUpSection('linkedinPopUp');">
-                        <i class="fab fa-linkedin fa-2x"></i>
+                    <button id="linkedin" class="nav_button contact_button">
+                        <a href="https://www.linkedin.com/in/matthew-pendleton-57524999/" target="_blank">
+                            <i class="fab fa-linkedin fa-2x" style="color: black;"></i>
+                        </a>
                     </button>
                     <button id="email" class="nav_button contact_button" onclick="SwitchPopUpSection('emailPopUp');">
                         <i class="far fa-envelope fa-2x"></i>
@@ -157,25 +159,44 @@
             </div>
         </div>
             <!--Projects content-->
-        <div id="projectsPopUp" class="popup">
+            <!-- style tag overrides 0 width this pop up appears instead of opening from left side -->
+        <div id="projectsPopUp" class="popup" style="width: 700px;">
             <div class="flex-container">
                 <div class="project">
-
+                    <img src="./img/Grey_background.jpg" alt="background">
+                    <div class="project_overlay" style="opacity: 1; color: chartreuse;">
+                        <h1>Back-end Projects</h1>
+                    </div>
                 </div>
                 <div class="project">
-
+                    <img src="./img/Grey_background.jpg" alt="background">
+                    <a href="https://htmlpreview.github.io/?https://github.com/mapendleton/TA-HTML-CSS/tree/master/Space-Station/space_station_index.html" class="project_overlay">
+                        <h1>Click to preview!</h1>
+                    </a>
                 </div>
                 <div class="project">
-
+                    <img src="./img/Cinema.png" alt="background">
+                    <a href="https://htmlpreview.github.io/?https://github.com/mapendleton/TA-HTML-CSS/blob/master/project_cinema/cinema.html" class="project_overlay">
+                        <h1>CLick to preview!</h1>
+                    </a>
                 </div>
                 <div class="project">
-
+                    <img src="./img/pizza.png" alt="background">
+                    <a href="" class="project_overlay">
+                        <h1>Click to preview!</h1>
+                    </a>
                 </div>
                 <div class="project">
-
+                    <img src="./img/Grey_background.jpg" alt="background">
+                    <div class="project_overlay">
+                        <h1>Click to preview!</h1>
+                    </div>
                 </div>
                 <div class="project">
-
+                    <img src="./img/Grey_background.jpg" alt="background">
+                    <div class="project_overlay">
+                        <h1>Click to preview!</h1>
+                    </div>
                 </div>
             </div>
         </div>
@@ -188,15 +209,14 @@
                 <i class="fab fa-github fa-2x"></i>
             </div>
         </div> -->
-        <div id="linkedinPopUp" class="popup">
+        <!-- <div id="linkedinPopUp" class="popup">
             <div class="text_box">
                 <p>Check out my LinkedIn profile!</p>
             </div>
             <div class="img_container">
-                <!-- <i class="fab fa-linkedin fa-2x"></i> -->
                 <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="light" data-vanity="matthew-pendleton-57524999"><a class="LI-simple-link" href='https://www.linkedin.com/in/matthew-pendleton-57524999?trk=profile-badge'>Matthew Pendleton</a></div>
             </div>
-        </div>
+        </div> -->
         <div id="emailPopUp" class="popup">
             <div class="text_box">
                 <p>alksdjf;alskdjfkj</p>
@@ -225,7 +245,7 @@
                     I do my best at everything I do, and love to break my limits.
                     I push myself physically as a powerlifter,
                     and I push myself mentally as a full-stack developer.
-                    click the skills button or exp button to find out more!
+                    click the skills, exp, or my work buttons to find out more!
                 </p>
             </div>
         </div>

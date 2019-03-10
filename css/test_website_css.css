@@ -162,14 +162,17 @@ body {
     z-index: 1;
     height: 400px; width: 0;
     opacity: 0;
+    /* use visibility hidden so img doesn't get in way of project div */
+    visibility: hidden;
     top: 200px; left: 300px;
     /* disappears faster when changed so you can't see text try to fill a smaller div */
-    transition: width .6s ease-out, opacity .1s linear;
+    transition: width .6s ease-out, opacity .1s linear, visibility .3s linear .2s;
 }
 
 .popup_appear {
     width: 700px;
     opacity: 1;
+    visibility: visible;
     transition: width 0.6s ease-out, opacity 0.3s linear .2s;
 }
 
@@ -193,7 +196,7 @@ body {
     right: 50%;
     opacity: 0;
     /* for when it closes */
-    transition: opacity .05s;
+    transition: opacity .05s linear .05s;
 }
 /* separate transition for text */
 .text_box_appear {
@@ -269,8 +272,46 @@ body {
 
 .project {
     height: 160px; width: 200px;
-    background-color: yellow;
+    position: relative;
+    border: 2px solid chartreuse;
     margin: 15px auto;
+    transition: all .3s ease-out;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.project a {
+    color: black;
+}
+
+.project img {
+    height: 100%; width: 100%;
+    border-radius: 8px;
+    transform: scale(1.2);
+    transition: transform .3s ease-out;
+}
+
+.project:hover {
+    border-radius: 20px;
+}
+
+.project:hover img{
+    transform: scale(1.1);
+}
+
+.project_overlay{
+    position: absolute;
+    text-align: center;
+    top: 0; left: 0;
+    height: 100%; width: 100%;
+    opacity: 0;
+    transition: all .3s
+}
+
+.project_overlay:hover {
+    opacity: 1;
+    background-color: rgba(0,0,0,0.7);
+    color: chartreuse;
 }
 
 /*--------------------------------------------------
